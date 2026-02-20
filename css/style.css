@@ -213,9 +213,9 @@ ol {
 }
 
 .nav__logo-img {
-  height: 32px;
+  height: 28px;
   width: auto;
-  filter: brightness(0) invert(1);
+  border-radius: 4px;
   transition: filter var(--transition-base);
 }
 
@@ -379,6 +379,7 @@ ol {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 15%;
 }
 
 /* --- Buttons --- */

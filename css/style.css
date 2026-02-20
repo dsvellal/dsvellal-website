@@ -69,7 +69,9 @@
 }
 
 /* --- Reset & Base --- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -106,14 +108,18 @@ a:hover {
   color: var(--color-accent-hover);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-heading);
   line-height: var(--lh-heading);
   font-weight: 600;
   color: var(--color-text);
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -202,6 +208,19 @@ ul, ol {
   color: var(--color-hero-text);
   text-decoration: none;
   transition: color var(--transition-fast);
+  display: flex;
+  align-items: center;
+}
+
+.nav__logo-img {
+  height: 32px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  transition: filter var(--transition-base);
+}
+
+.nav--scrolled .nav__logo-img {
+  filter: none;
 }
 
 .nav--scrolled .nav__logo {
@@ -889,10 +908,25 @@ ul, ol {
   letter-spacing: 0.5px;
 }
 
-.blog-card__tag--stories { background: var(--color-tag-stories); color: #7D6930; }
-.blog-card__tag--philosophy { background: var(--color-tag-philosophy); color: #3D6577; }
-.blog-card__tag--reflections { background: var(--color-tag-reflections); color: #6B3D7D; }
-.blog-card__tag--observations { background: var(--color-tag-observations); color: #3D7D5A; }
+.blog-card__tag--stories {
+  background: var(--color-tag-stories);
+  color: #7D6930;
+}
+
+.blog-card__tag--philosophy {
+  background: var(--color-tag-philosophy);
+  color: #3D6577;
+}
+
+.blog-card__tag--reflections {
+  background: var(--color-tag-reflections);
+  color: #6B3D7D;
+}
+
+.blog-card__tag--observations {
+  background: var(--color-tag-observations);
+  color: #3D7D5A;
+}
 
 .blog-card__title {
   font-size: var(--fs-h3);

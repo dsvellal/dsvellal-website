@@ -1,0 +1,320 @@
+/* ===========================
+   DSVellal.com — DARK TECH-FORWARD Theme
+   Near-black + electric cyan/purple accents
+   GitHub Dark Mode / Vercel aesthetic
+   =========================== */
+
+/* Override the base design tokens */
+:root {
+    /* Dark Palette */
+    --color-bg: #0D1117;
+    --color-bg-alt: #010409;
+    --color-bg-card: #161B22;
+    --color-text: #E6EDF3;
+    --color-text-secondary: #8B949E;
+    --color-text-muted: #6E7681;
+    --color-accent: #58A6FF;
+    --color-accent-hover: #79C0FF;
+    --color-accent-light: rgba(88, 166, 255, 0.12);
+    --color-border: #30363D;
+    --color-border-light: #21262D;
+    --color-hero-bg: #0D1117;
+    --color-hero-text: #FFFFFF;
+    --color-hero-accent: #58A6FF;
+    --color-tag-stories: rgba(63, 185, 80, 0.2);
+    --color-tag-philosophy: rgba(88, 166, 255, 0.2);
+    --color-tag-reflections: rgba(163, 113, 247, 0.2);
+    --color-tag-observations: rgba(210, 153, 34, 0.2);
+    --color-shadow: rgba(0, 0, 0, 0.4);
+    --color-shadow-hover: rgba(88, 166, 255, 0.15);
+}
+
+/* --- Hero: Full dark with electric glow --- */
+.hero {
+    background: linear-gradient(135deg, #0D1117 0%, #161B22 50%, #0D1117 100%);
+    position: relative;
+}
+
+.hero::before {
+    background: radial-gradient(ellipse at 70% 50%, rgba(88, 166, 255, 0.06), transparent 60%),
+        radial-gradient(ellipse at 30% 70%, rgba(163, 113, 247, 0.04), transparent 50%);
+}
+
+.hero__greeting {
+    color: #58A6FF;
+    font-style: italic;
+}
+
+.hero__photo {
+    border: 3px solid rgba(88, 166, 255, 0.3);
+    box-shadow: 0 0 40px rgba(88, 166, 255, 0.15), 0 0 80px rgba(163, 113, 247, 0.08);
+}
+
+/* --- Nav --- */
+.nav--scrolled {
+    background-color: rgba(13, 17, 23, 0.92);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 1px 0 #21262D;
+}
+
+.nav--scrolled .nav__logo {
+    color: #E6EDF3;
+}
+
+.nav--scrolled .nav__logo-img {
+    filter: brightness(0) invert(1);
+}
+
+.nav--scrolled .nav__link {
+    color: #8B949E;
+}
+
+.nav--scrolled .nav__link:hover {
+    color: #E6EDF3;
+}
+
+.nav__link::after {
+    background: #58A6FF;
+}
+
+/* --- Buttons --- */
+.btn--primary {
+    background: #58A6FF;
+    color: #0D1117;
+    font-weight: 600;
+}
+
+.btn--primary:hover {
+    background: #79C0FF;
+    color: #0D1117;
+    box-shadow: 0 4px 20px rgba(88, 166, 255, 0.35);
+}
+
+.btn--outline {
+    border-color: #30363D;
+    color: #8B949E;
+}
+
+.btn--outline:hover {
+    border-color: #58A6FF;
+    color: #58A6FF;
+}
+
+.btn--outline-dark {
+    border-color: #30363D;
+    color: #58A6FF;
+}
+
+.btn--outline-dark:hover {
+    background: #58A6FF;
+    color: #0D1117;
+}
+
+/* --- Section Titles --- */
+.section__title::after {
+    background: linear-gradient(90deg, #58A6FF, #A371F7);
+}
+
+/* --- Cards glow on hover --- */
+.card {
+    background: #161B22;
+    border-color: #21262D;
+}
+
+.card:hover {
+    box-shadow: 0 0 30px rgba(88, 166, 255, 0.1);
+    border-color: #30363D;
+}
+
+/* --- Timeline --- */
+.timeline::before {
+    background: linear-gradient(to bottom, #58A6FF, #A371F7, #3FB950);
+    opacity: 0.4;
+}
+
+.timeline__dot {
+    background: #58A6FF;
+    border-color: #0D1117;
+    box-shadow: 0 0 0 2px #58A6FF, 0 0 12px rgba(88, 166, 255, 0.4);
+}
+
+.timeline__card {
+    background: #161B22;
+    border-color: #21262D;
+}
+
+.timeline__card:hover {
+    box-shadow: 0 0 20px rgba(88, 166, 255, 0.08);
+}
+
+.timeline__highlights li::before {
+    color: #58A6FF;
+}
+
+.metric {
+    color: #58A6FF;
+}
+
+/* --- Education --- */
+.edu-card {
+    background: #161B22;
+    border-color: #21262D;
+}
+
+/* --- Projects --- */
+.project-card {
+    background: #161B22;
+    border-color: #21262D;
+}
+
+.project-card:hover {
+    box-shadow: 0 0 30px rgba(88, 166, 255, 0.1);
+    border-color: #58A6FF33;
+}
+
+/* --- Resume --- */
+.resume-section {
+    background: #161B22;
+    border-color: #21262D;
+}
+
+.resume__block-title {
+    color: #58A6FF;
+    border-bottom-color: #58A6FF;
+}
+
+.resume__skill-tag {
+    background: rgba(88, 166, 255, 0.12);
+    color: #58A6FF;
+}
+
+/* --- Awards --- */
+.award-card {
+    background: #161B22;
+    border-color: #21262D;
+}
+
+.award-card:hover {
+    box-shadow: 0 0 20px rgba(88, 166, 255, 0.08);
+}
+
+.award-card__date {
+    color: #58A6FF;
+}
+
+/* --- Blog category tags in dark mode --- */
+.blog-card__tag--stories {
+    background: rgba(63, 185, 80, 0.15);
+    color: #3FB950;
+}
+
+.blog-card__tag--philosophy {
+    background: rgba(88, 166, 255, 0.15);
+    color: #58A6FF;
+}
+
+.blog-card__tag--reflections {
+    background: rgba(163, 113, 247, 0.15);
+    color: #A371F7;
+}
+
+.blog-card__tag--observations {
+    background: rgba(210, 153, 34, 0.15);
+    color: #D29922;
+}
+
+.blog-card {
+    background: #161B22;
+    border-color: #21262D;
+}
+
+.blog-card:hover {
+    box-shadow: 0 0 30px rgba(88, 166, 255, 0.1);
+    border-color: #30363D;
+    color: #E6EDF3;
+}
+
+.blog-card:hover .blog-card__title {
+    color: #58A6FF;
+}
+
+/* --- Blog filters --- */
+.blog-filter {
+    border-color: #30363D;
+    color: #8B949E;
+    background: transparent;
+}
+
+.blog-filter:hover,
+.blog-filter--active {
+    background: #58A6FF;
+    border-color: #58A6FF;
+    color: #0D1117;
+}
+
+/* --- Footer --- */
+.footer {
+    background: #010409;
+    border-top: 1px solid #21262D;
+}
+
+.footer__title {
+    color: #E6EDF3;
+}
+
+.footer__link:hover {
+    color: #58A6FF;
+}
+
+.footer__copy {
+    border-top-color: #21262D;
+}
+
+/* --- Recognition items --- */
+.recognition-item {
+    background: #161B22;
+    border-color: #21262D;
+}
+
+.recognition-item__date {
+    color: #58A6FF;
+}
+
+/* --- Blog post page --- */
+.blog-post__content blockquote {
+    border-left-color: #A371F7;
+}
+
+.blog-post__content a {
+    color: #58A6FF;
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0D1117;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #30363D;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #484F58;
+}
+
+/* --- Mobile nav in dark --- */
+@media (max-width: 768px) {
+    .nav__links {
+        background: rgba(13, 17, 23, 0.98);
+        border-bottom-color: #21262D;
+    }
+
+    .nav__links .nav__link {
+        color: #E6EDF3;
+    }
+}

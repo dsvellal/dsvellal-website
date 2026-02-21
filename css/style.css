@@ -951,6 +951,7 @@ ol {
   line-height: 1.6;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1297,4 +1298,219 @@ ol {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+/* --- Cursor Blinking & Typing --- */
+.cursor {
+  display: inline-block;
+  width: 2px;
+  background-color: var(--color-hero-accent);
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/* --- Skeleton Loader --- */
+.skeleton-card {
+  pointer-events: none;
+}
+
+.skeleton-title,
+.skeleton-desc,
+.skeleton-link {
+  background: linear-gradient(90deg, var(--color-border) 25%, var(--color-bg) 50%, var(--color-border) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite linear;
+  border-radius: 4px;
+}
+
+.skeleton-title {
+  height: 24px;
+  width: 70%;
+  margin-bottom: var(--space-xs);
+}
+
+.skeleton-desc {
+  height: 16px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.skeleton-desc.short {
+  width: 60%;
+  margin-bottom: var(--space-sm);
+}
+
+.skeleton-link {
+  height: 16px;
+  width: 40%;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* --- 3D Tilt Cards --- */
+.tilt-card {
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+
+.tilt-card>* {
+  transform: translateZ(30px);
+}
+
+/* --- Game Trigger --- */
+.game-trigger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-left: var(--space-xs);
+  opacity: 0.5;
+  transition: opacity var(--transition-base), transform var(--transition-fast);
+}
+
+.game-trigger:hover {
+  opacity: 1;
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* --- Game Modal --- */
+.game-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-base);
+}
+
+.game-modal.is-active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.game-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.game-content {
+  position: relative;
+  background: var(--color-bg-card);
+  padding: var(--space-lg);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  transform: translateY(20px);
+  transition: transform var(--transition-base);
+}
+
+.game-modal.is-active .game-content {
+  transform: translateY(0);
+}
+
+.game-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.game-close:hover {
+  color: var(--color-text);
+}
+
+.game-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
+.game-title {
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--color-accent);
+}
+
+.game-score {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+#game-canvas {
+  background: #000;
+  border: 2px solid var(--color-border);
+  border-radius: 4px;
+}
+
+.game-instructions {
+  margin-top: var(--space-sm);
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+.game-gameover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--border-radius-sm);
+  text-align: center;
+  display: none;
+  flex-direction: column;
+  gap: var(--space-sm);
+  border: 1px solid var(--color-accent);
+}
+
+.game-gameover.is-active {
+  display: flex;
+}
+
+.game-gameover p {
+  color: #fff;
+  font-weight: bold;
+  font-size: var(--fs-h3);
 }

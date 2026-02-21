@@ -47,7 +47,7 @@
       <div class="hero__content">
         <div class="hero__text">
           <p class="hero__greeting">Namaste!</p>
-          <h1 class="hero__name">Dattatreya S Vellal</h1>
+          <h1 class="hero__name"><span id="typing-text"></span><span class="cursor">|</span></h1>
           <p class="hero__tagline">
             Software Competency Lead at Philips, orchestrating digital transformation
             with precision and passion. Career spanning Philips, Amazon, IBM & Exeter —
@@ -299,48 +299,25 @@
         <h2 class="section__title">Tech Artefacts</h2>
         <p class="section__subtitle">Open-source contributions, side projects, and technical explorations</p>
       </div>
-      <div class="project-grid">
-        <div class="project-card fade-in">
-          <h3 class="project-card__title">IWillCode202x</h3>
-          <p class="project-card__desc">An experiment to coach non-techies who are enthusiastic about programming, to
-            program!</p>
-          <a href="https://github.com/dsvellal/IWillCode202x" target="_blank" rel="noopener"
-            class="project-card__link">View on GitHub →</a>
+      <div class="project-grid" id="github-projects-container">
+        <!-- Skeleton Loaders -->
+        <div class="project-card skeleton-card fade-in">
+          <div class="skeleton-title"></div>
+          <div class="skeleton-desc"></div>
+          <div class="skeleton-desc short"></div>
+          <div class="skeleton-link"></div>
         </div>
-        <div class="project-card fade-in">
-          <h3 class="project-card__title">Code Examples</h3>
-          <p class="project-card__desc">Repository of code experiments including a fully configurable anagram program
-            with functional tests.</p>
-          <a href="https://github.com/dsvellal/code-examples" target="_blank" rel="noopener"
-            class="project-card__link">View on GitHub →</a>
+        <div class="project-card skeleton-card fade-in">
+          <div class="skeleton-title"></div>
+          <div class="skeleton-desc"></div>
+          <div class="skeleton-desc short"></div>
+          <div class="skeleton-link"></div>
         </div>
-        <div class="project-card fade-in">
-          <h3 class="project-card__title">Utilities</h3>
-          <p class="project-card__desc">Small utilities for personal use and experimental code for coaching DevOps
-            observability.</p>
-          <a href="https://github.com/dsvellal/utilities" target="_blank" rel="noopener" class="project-card__link">View
-            on GitHub →</a>
-        </div>
-        <div class="project-card fade-in">
-          <h3 class="project-card__title">Philips Open Source</h3>
-          <p class="project-card__desc">Maintainer for Cerberus and TextSimilarityProcessor. Active code reviewer on
-            Python Guardrails.</p>
-          <a href="https://github.com/philips-software/cerberus/blob/master/MAINTAINERS.md" target="_blank"
-            rel="noopener" class="project-card__link">Cerberus →</a>
-        </div>
-        <div class="project-card fade-in">
-          <h3 class="project-card__title">Gitstats Fork</h3>
-          <p class="project-card__desc">Forked gitstats repository to build a new feature: anonymized reports for
-            privacy-first analytics.</p>
-          <a href="https://github.com/dsvellal/gitstats" target="_blank" rel="noopener" class="project-card__link">View
-            on GitHub →</a>
-        </div>
-        <div class="project-card fade-in">
-          <h3 class="project-card__title">Exercism Profile</h3>
-          <p class="project-card__desc">Learning new programming languages through structured coding challenges on
-            Exercism.io.</p>
-          <a href="https://exercism.io/profiles/dsvellal" target="_blank" rel="noopener" class="project-card__link">View
-            Profile →</a>
+        <div class="project-card skeleton-card fade-in">
+          <div class="skeleton-title"></div>
+          <div class="skeleton-desc"></div>
+          <div class="skeleton-desc short"></div>
+          <div class="skeleton-link"></div>
         </div>
       </div>
     </div>
@@ -937,11 +914,31 @@
         <a href="https://www.linkedin.com/in/dsvellal" target="_blank" rel="noopener" class="footer__link">💼
           LinkedIn</a>
       </div>
-      <p class="footer__copy">© 2025 Dattatreya S Vellal. All rights reserved.</p>
+      <p class="footer__copy">© 2025 Dattatreya S Vellal. All rights reserved. <button id="game-trigger"
+          class="game-trigger" aria-label="Play Game" title="Play a secret game!">🎮</button></p>
     </div>
   </footer>
 
+  <!-- ========== Game Modal ========== -->
+  <div class="game-modal" id="game-modal">
+    <div class="game-overlay" id="game-overlay"></div>
+    <div class="game-content">
+      <button class="game-close" id="game-close" aria-label="Close Game">&times;</button>
+      <div class="game-header">
+        <h3 class="game-title">Terminal Snake</h3>
+        <div class="game-score">Score: <span id="snake-score">0</span></div>
+      </div>
+      <canvas id="game-canvas" width="400" height="400"></canvas>
+      <div class="game-instructions">Use arrow keys to play. Avoid walls and your own tail!</div>
+      <div class="game-gameover" id="game-gameover">
+        <p>Game Over!</p>
+        <button class="btn btn--primary" id="game-restart">Play Again</button>
+      </div>
+    </div>
+  </div>
+
   <script src="js/main.js"></script>
+  <script src="js/game.js"></script>
 </body>
 
 </html>

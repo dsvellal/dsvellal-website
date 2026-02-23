@@ -47,11 +47,10 @@
       <div class="hero__content">
         <div class="hero__text">
           <p class="hero__greeting">Namaste!</p>
-          <h1 class="hero__name">Dattatreya S Vellal</h1>
+          <h1 class="hero__name"><span id="typing-text"></span><span class="cursor">|</span></h1>
           <p class="hero__tagline">
-            Software Competency Lead at Philips, orchestrating digital transformation
-            with precision and passion. Career spanning Philips, Amazon, IBM & Exeter —
-            turning complex challenges into game-changing opportunities.
+            Architecting digital transformation with uncompromising precision. A career spanning Philips, Amazon, IBM,
+            and Exeter—forging resilient systems and turning monumental challenges into defining opportunities.
           </p>
           <div class="hero__cta">
             <a href="#experience" class="btn btn--primary">Explore My Journey</a>
@@ -72,35 +71,36 @@
         <h2 class="section__title">What I Bring to the Table</h2>
       </div>
       <p class="about__intro fade-in">
-        At Philips North America LLC, I've been the driving force behind global software excellence since 2018 —
-        leading teams to slash release times by <span class="metric">60%</span>, save millions through technical debt
-        reduction (<span class="metric">€2.1M</span> in 2021 alone!), and pioneer hiring processes that boosted
-        candidate NPS by <span class="metric">18%</span>.
+        As the vanguard of global software excellence at Philips North America LLC, I orchestrate the convergence of
+        deep technical mastery and strategic vision. My defining achievements include accelerating release cadences by a
+        staggering <span class="metric">60%</span>, eliminating a monumental <span class="metric">€2.1M</span> in
+        technical debt in a single year, and revolutionizing hiring paradigms to elevate candidate satisfaction by <span
+          class="metric">18%</span>.
       </p>
       <div class="about-grid">
         <div class="card fade-in">
           <div class="card__icon">⚙️</div>
-          <h3 class="card__title">Technical Expertise</h3>
-          <p class="card__text">Software architecture, CI/CD automation, technical debt elimination, secure development,
-            and 25+ programming languages mastered.</p>
+          <h3 class="card__title">Architectural Mastery</h3>
+          <p class="card__text">Forging scalable software architectures, mastering CI/CD automation, systematically
+            eradicating technical debt, and building incredibly secure cloud-native environments.</p>
         </div>
         <div class="card fade-in">
           <div class="card__icon">🎯</div>
-          <h3 class="card__title">Leadership</h3>
-          <p class="card__text">Led cross-functional teams globally, mentored executives, and influenced strategy at the
-            highest levels. Promoted to Principal — youngest in Philips India.</p>
+          <h3 class="card__title">Strategic Leadership</h3>
+          <p class="card__text">Guiding global, cross-functional engineering teams, mentoring executive leadership, and
+            profoundly influencing high-level strategic imperatives.</p>
         </div>
         <div class="card fade-in">
           <div class="card__icon">📈</div>
-          <h3 class="card__title">Impact</h3>
-          <p class="card__text">From $300K infrastructure savings to €3.45M in future opportunities — every initiative
-            delivers measurable ROI and tangible business outcomes.</p>
+          <h3 class="card__title">Monumental Impact</h3>
+          <p class="card__text">Delivering measurable, decisive ROI—from rapid €3.45M future-opportunity unlocks to
+            profound technical infrastructure optimizations.</p>
         </div>
         <div class="card fade-in">
           <div class="card__icon">💬</div>
-          <h3 class="card__title">Communication</h3>
-          <p class="card__text">Known for simplifying the complex. I inspire trust and collaboration across teams,
-            geographies, and cultures — from India to the US.</p>
+          <h3 class="card__title">Lucid Storytelling</h3>
+          <p class="card__text">Distilling the deeply complex into the elegantly simple. Cultivating steadfast trust and
+            seamless collaboration across diverse global cultures.</p>
         </div>
       </div>
     </div>
@@ -299,185 +299,32 @@
         <h2 class="section__title">Tech Artefacts</h2>
         <p class="section__subtitle">Open-source contributions, side projects, and technical explorations</p>
       </div>
-      <div class="project-grid">
-        <div class="project-card fade-in">
-          <h3 class="project-card__title">IWillCode202x</h3>
-          <p class="project-card__desc">An experiment to coach non-techies who are enthusiastic about programming, to
-            program!</p>
-          <a href="https://github.com/dsvellal/IWillCode202x" target="_blank" rel="noopener"
-            class="project-card__link">View on GitHub →</a>
+      <div class="project-grid" id="github-projects-container">
+        <!-- Skeleton Loaders -->
+        <div class="project-card skeleton-card fade-in">
+          <div class="skeleton-title"></div>
+          <div class="skeleton-desc"></div>
+          <div class="skeleton-desc short"></div>
+          <div class="skeleton-link"></div>
         </div>
-        <div class="project-card fade-in">
-          <h3 class="project-card__title">Code Examples</h3>
-          <p class="project-card__desc">Repository of code experiments including a fully configurable anagram program
-            with functional tests.</p>
-          <a href="https://github.com/dsvellal/code-examples" target="_blank" rel="noopener"
-            class="project-card__link">View on GitHub →</a>
+        <div class="project-card skeleton-card fade-in">
+          <div class="skeleton-title"></div>
+          <div class="skeleton-desc"></div>
+          <div class="skeleton-desc short"></div>
+          <div class="skeleton-link"></div>
         </div>
-        <div class="project-card fade-in">
-          <h3 class="project-card__title">Utilities</h3>
-          <p class="project-card__desc">Small utilities for personal use and experimental code for coaching DevOps
-            observability.</p>
-          <a href="https://github.com/dsvellal/utilities" target="_blank" rel="noopener" class="project-card__link">View
-            on GitHub →</a>
-        </div>
-        <div class="project-card fade-in">
-          <h3 class="project-card__title">Philips Open Source</h3>
-          <p class="project-card__desc">Maintainer for Cerberus and TextSimilarityProcessor. Active code reviewer on
-            Python Guardrails.</p>
-          <a href="https://github.com/philips-software/cerberus/blob/master/MAINTAINERS.md" target="_blank"
-            rel="noopener" class="project-card__link">Cerberus →</a>
-        </div>
-        <div class="project-card fade-in">
-          <h3 class="project-card__title">Gitstats Fork</h3>
-          <p class="project-card__desc">Forked gitstats repository to build a new feature: anonymized reports for
-            privacy-first analytics.</p>
-          <a href="https://github.com/dsvellal/gitstats" target="_blank" rel="noopener" class="project-card__link">View
-            on GitHub →</a>
-        </div>
-        <div class="project-card fade-in">
-          <h3 class="project-card__title">Exercism Profile</h3>
-          <p class="project-card__desc">Learning new programming languages through structured coding challenges on
-            Exercism.io.</p>
-          <a href="https://exercism.io/profiles/dsvellal" target="_blank" rel="noopener" class="project-card__link">View
-            Profile →</a>
+        <div class="project-card skeleton-card fade-in">
+          <div class="skeleton-title"></div>
+          <div class="skeleton-desc"></div>
+          <div class="skeleton-desc short"></div>
+          <div class="skeleton-link"></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== Resume ========== -->
-  <section class="section" id="resume">
-    <div class="container">
-      <div class="section__header fade-in">
-        <h2 class="section__title">Resume</h2>
-      </div>
-      <div class="resume-section fade-in">
-        <div class="resume__header">
-          <h3 class="resume__name">Dattatreya Subramanya Vellal</h3>
-          <p class="resume__contact">
-            <a href="mailto:dsvellal@gmail.com">dsvellal@gmail.com</a> ·
-            <a href="https://github.com/dsvellal" target="_blank" rel="noopener">GitHub</a> ·
-            <a href="https://www.linkedin.com/in/dsvellal" target="_blank" rel="noopener">LinkedIn</a>
-          </p>
-        </div>
-
-        <div class="resume__block">
-          <h4 class="resume__block-title">Core Competencies</h4>
-          <div class="resume__skills">
-            <span class="resume__skill-tag">Software Architecture</span>
-            <span class="resume__skill-tag">CI/CD Automation</span>
-            <span class="resume__skill-tag">Cloud-Native Development</span>
-            <span class="resume__skill-tag">Technical Debt Reduction</span>
-            <span class="resume__skill-tag">AI/ML Integration</span>
-            <span class="resume__skill-tag">Scalable Architecture</span>
-            <span class="resume__skill-tag">Secure Development</span>
-            <span class="resume__skill-tag">Static Code Analysis</span>
-            <span class="resume__skill-tag">Agile / Lean Methods</span>
-            <span class="resume__skill-tag">Cross-functional Leadership</span>
-            <span class="resume__skill-tag">25+ Languages</span>
-            <span class="resume__skill-tag">Mentoring & Coaching</span>
-          </div>
-        </div>
-
-        <div class="resume__block">
-          <h4 class="resume__block-title">Professional Experience</h4>
-          <div class="resume__item">
-            <div class="resume__item-header">
-              <span class="resume__item-title">Software Competency Lead — Philips</span>
-              <span class="resume__item-date">2018 — Present</span>
-            </div>
-            <p class="resume__item-subtitle">Innovation Engineering, Philips North America LLC</p>
-            <ul class="resume__item-list">
-              <li>Directed digital transformation achieving $300K infrastructure savings</li>
-              <li>Slashed product delivery time by 60% through continuous value delivery</li>
-              <li>Delivered €2.1M savings via technical debt reduction roadmap</li>
-              <li>Led global 'Bar Raiser' program — 50+ engineers trained, 50% faster senior hiring</li>
-            </ul>
-          </div>
-          <div class="resume__item">
-            <div class="resume__item-header">
-              <span class="resume__item-title">SDE II — Amazon</span>
-              <span class="resume__item-date">2015 — 2018</span>
-            </div>
-            <p class="resume__item-subtitle">Amazon Development Center India</p>
-            <ul class="resume__item-list">
-              <li>Reduced fraud check latency by 86–89% through performance optimization</li>
-              <li>Automated ingestion of 2B+ ASINs daily for analytics</li>
-              <li>Built fraud detection APIs for Amazon Pay launch</li>
-            </ul>
-          </div>
-          <div class="resume__item">
-            <div class="resume__item-header">
-              <span class="resume__item-title">Sr. Lead — Exeter Software</span>
-              <span class="resume__item-date">2013 — 2015</span>
-            </div>
-            <p class="resume__item-subtitle">Exeter Software India Private Limited</p>
-            <ul class="resume__item-list">
-              <li>Spearheaded OneGate / Edifecs integration POC</li>
-              <li>Recognized as "Texeter Thought Leader"</li>
-            </ul>
-          </div>
-          <div class="resume__item">
-            <div class="resume__item-header">
-              <span class="resume__item-title">Software Engineer — IBM</span>
-              <span class="resume__item-date">2007 — 2013</span>
-            </div>
-            <p class="resume__item-subtitle">IBM India Software Labs</p>
-            <ul class="resume__item-list">
-              <li>Patent inventor — "Determining and conveying user availability" (27 citations)</li>
-              <li>Led full-lifecycle Lotus Expeditor development</li>
-              <li>Most influential Technical Experts Council Member of India</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="resume__block">
-          <h4 class="resume__block-title">Education</h4>
-          <div class="resume__item">
-            <div class="resume__item-header">
-              <span class="resume__item-title">BE, Computer Science — RV College of Engineering</span>
-              <span class="resume__item-date">2003 — 2007</span>
-            </div>
-          </div>
-          <div class="resume__item">
-            <div class="resume__item-header">
-              <span class="resume__item-title">MSc Yoga — Annamalai University</span>
-              <span class="resume__item-date">2010 — 2011</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="resume__block">
-          <h4 class="resume__block-title">Patents & Publications</h4>
-          <div class="resume__item">
-            <p class="resume__item-subtitle">
-              <a href="https://patents.justia.com/patent/8560487" target="_blank" rel="noopener">Determining and
-                conveying user availability</a> — 27 patent citations, 8 non-patent citations
-            </p>
-          </div>
-          <div class="resume__item">
-            <p class="resume__item-subtitle">
-              <a href="https://patents.justia.com/patent/20150095117" target="_blank" rel="noopener">Managing Key
-                Performance Indicators</a> — 2 patent citations
-            </p>
-          </div>
-          <div class="resume__item">
-            <p class="resume__item-subtitle">
-              <a href="https://priorart.ip.com/IPCOM/000222905" target="_blank" rel="noopener">System and method of
-                gesture based Human Identification Protocol</a> — IBM Publication
-            </p>
-          </div>
-        </div>
-
-        <div class="resume__download">
-          <a href="https://drive.google.com/file/d/1HSPMOhWDFyyhu_hc2I_NDj5ZCJbrkMd-/view?usp=sharing" target="_blank"
-            rel="noopener" class="btn btn--primary">
-            📄 Download Full Resume (PDF)
-          </a>
-        </div>
-      </div>
-    </div>
+  </div>
+  </div>
   </section>
 
   <!-- ========== Awards ========== -->
@@ -941,7 +788,43 @@
     </div>
   </footer>
 
+  <!-- ========== Avatar Game UI ========== -->
+  <div class="avatar-game-container" id="avatar-game-container">
+    <div class="avatar-nudge" id="avatar-nudge">Want to learn a secret?</div>
+    <button class="avatar-trigger" id="avatar-trigger" aria-label="Play Avatar Trivia">
+      <img src="images/avatar.png" alt="Dattatreya Avatar">
+    </button>
+  </div>
+
+  <div class="game-overlay" id="avatar-game-overlay"></div>
+  <div class="avatar-speech-bubble" id="avatar-speech-bubble">
+    <button class="game-close" id="avatar-game-close" aria-label="Close Game">&times;</button>
+    <div class="speech-bubble-content" id="speech-bubble-content">
+      <h3 class="game-title" style="margin-bottom: var(--space-xs);">Interactive Profile Tour</h3>
+      <p id="trivia-question-text" style="font-size: var(--fs-h3); margin-bottom: var(--space-md);">Loading...</p>
+      <div id="trivia-options-container" class="trivia-options">
+        <!-- Buttons injected by JS -->
+      </div>
+      <div id="trivia-feedback-container" class="trivia-feedback" style="display: none;">
+        <p id="trivia-feedback-text"></p>
+        <button class="btn btn--primary" id="trivia-next-btn" style="margin-top: var(--space-sm);">Next
+          Question</button>
+      </div>
+      <div id="trivia-completion-container" class="trivia-completion" style="display: none; text-align: center;">
+        <h3 style="color: var(--color-hero-accent); margin-bottom: var(--space-xs);">Magnificent!</h3>
+        <p style="margin-bottom: var(--space-md);">You've unlocked the full map of my professional journey.</p>
+        <a href="resume.html" target="_blank" class="btn btn--primary" style="text-decoration: none;">📄 View Secret
+          Resume</a>
+      </div>
+      <div class="game-progress" id="game-progress"
+        style="margin-top: var(--space-md); font-size: var(--fs-xs); color: var(--color-text-muted);">Question 1 of 5
+      </div>
+    </div>
+  </div>
+
   <script src="js/main.js"></script>
+  <script src="js/avatar-game-data.js"></script>
+  <script src="js/avatar-game.js"></script>
 </body>
 
 </html>

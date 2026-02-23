@@ -1377,140 +1377,184 @@ ol {
   transform: translateZ(30px);
 }
 
-/* --- Game Trigger --- */
-.game-trigger {
-  background: none;
-  border: none;
+/* ========== Avatar Game UI ========== */
+.avatar-game-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.avatar-trigger {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid var(--color-primary);
+  background: var(--color-bg);
   cursor: pointer;
-  font-size: 1.2rem;
-  margin-left: var(--space-xs);
-  opacity: 0.5;
-  transition: opacity var(--transition-base), transform var(--transition-fast);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.game-trigger:hover {
+.avatar-trigger img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #f0f4f8;
+}
+
+.avatar-trigger:hover {
+  transform: scale(1.1) translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 102, 204, 0.3);
+}
+
+.avatar-nudge {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: var(--fs-small);
+  margin-bottom: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  position: relative;
+}
+
+.avatar-nudge::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  right: 20px;
+  border-width: 6px 6px 0;
+  border-style: solid;
+  border-color: var(--color-primary) transparent transparent transparent;
+}
+
+.avatar-nudge.is-visible {
   opacity: 1;
-  transform: scale(1.2) rotate(10deg);
+  transform: translateY(0);
 }
 
-/* --- Game Modal --- */
-.game-modal {
+.avatar-speech-bubble {
+  position: fixed;
+  bottom: 6rem;
+  right: 2rem;
+  width: 90%;
+  max-width: 400px;
+  background: var(--color-bg-inner);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  padding: var(--space-lg);
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8) translateY(20px);
+  transform-origin: bottom right;
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.avatar-speech-bubble.is-active {
+  opacity: 1;
+  pointer-events: all;
+  transform: scale(1) translateY(0);
+}
+
+.avatar-speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: 30px;
+  border-width: 10px 10px 0;
+  border-style: solid;
+  border-color: var(--color-bg-inner) transparent transparent transparent;
+}
+
+.avatar-speech-bubble::before {
+  content: '';
+  position: absolute;
+  bottom: -11px;
+  right: 30px;
+  border-width: 11px 11px 0;
+  border-style: solid;
+  border-color: var(--color-border) transparent transparent transparent;
+  z-index: -1;
+}
+
+.game-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  z-index: 1500;
   opacity: 0;
   pointer-events: none;
-  transition: opacity var(--transition-base);
+  transition: opacity 0.4s ease;
 }
 
-.game-modal.is-active {
+.game-overlay.is-active {
   opacity: 1;
   pointer-events: all;
 }
 
-.game-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+.trivia-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
 }
 
-.game-content {
-  position: relative;
-  background: var(--color-bg-card);
-  padding: var(--space-lg);
-  border-radius: var(--border-radius);
+.trivia-option-btn {
+  background: var(--color-bg);
   border: 1px solid var(--color-border);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 1;
-  transform: translateY(20px);
-  transition: transform var(--transition-base);
-}
-
-.game-modal.is-active .game-content {
-  transform: translateY(0);
-}
-
-.game-close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  background: none;
-  border: none;
-  color: var(--color-text-secondary);
-  font-size: 2rem;
+  padding: var(--space-sm);
+  border-radius: var(--border-radius);
+  text-align: left;
   cursor: pointer;
-  line-height: 1;
-}
-
-.game-close:hover {
+  font-family: var(--font-primary);
+  font-size: var(--fs-small);
   color: var(--color-text);
+  transition: all 0.2s ease;
 }
 
-.game-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: var(--space-md);
+.trivia-option-btn:hover {
+  background: rgba(0, 102, 204, 0.05);
+  border-color: var(--color-primary);
+  transform: translateX(4px);
 }
 
-.game-title {
-  font-family: 'Courier New', Courier, monospace;
-  color: var(--color-accent);
+.trivia-option-btn.correct {
+  background: rgba(40, 167, 69, 0.1);
+  border-color: #28a745;
+  color: #28a745;
 }
 
-.game-score {
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: bold;
+.trivia-option-btn.incorrect {
+  background: rgba(220, 53, 69, 0.1);
+  border-color: #dc3545;
+  color: #dc3545;
+  opacity: 0.7;
 }
 
-#game-canvas {
-  background: #000;
-  border: 2px solid var(--color-border);
-  border-radius: 4px;
-}
-
-.game-instructions {
-  margin-top: var(--space-sm);
-  font-size: var(--fs-xs);
-  color: var(--color-text-muted);
-}
-
-.game-gameover {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.9);
-  padding: var(--space-md) var(--space-lg);
-  border-radius: var(--border-radius-sm);
-  text-align: center;
-  display: none;
-  flex-direction: column;
-  gap: var(--space-sm);
-  border: 1px solid var(--color-accent);
-}
-
-.game-gameover.is-active {
-  display: flex;
-}
-
-.game-gameover p {
-  color: #fff;
-  font-weight: bold;
-  font-size: var(--fs-h3);
+.trivia-feedback {
+  margin-top: var(--space-md);
+  padding: var(--space-sm);
+  background: rgba(0, 102, 204, 0.05);
+  border-left: 3px solid var(--color-primary);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  font-size: var(--fs-small);
 }

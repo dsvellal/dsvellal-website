@@ -788,43 +788,18 @@
     </div>
   </footer>
 
-  <!-- ========== Avatar Game UI ========== -->
+  <!-- ========== Avatar Facts UI ========== -->
   <div class="avatar-game-container" id="avatar-game-container">
-    <div class="avatar-nudge" id="avatar-nudge">Want to learn a secret?</div>
-    <button class="avatar-trigger" id="avatar-trigger" aria-label="Play Avatar Trivia">
-      <img src="images/avatar.png" alt="Dattatreya Avatar">
+    <div class="fact-bubble" id="avatar-fact-bubble">
+      <p id="avatar-fact-text">Want to learn a secret?</p>
+    </div>
+    <button class="avatar-trigger" id="avatar-trigger" aria-label="Avatar Facts">
+      <img src="images/avatar.png" id="avatar-image" alt="Dattatreya Avatar">
     </button>
   </div>
 
-  <div class="game-overlay" id="avatar-game-overlay"></div>
-  <div class="avatar-speech-bubble" id="avatar-speech-bubble">
-    <button class="game-close" id="avatar-game-close" aria-label="Close Game">&times;</button>
-    <div class="speech-bubble-content" id="speech-bubble-content">
-      <h3 class="game-title" style="margin-bottom: var(--space-xs);">Interactive Profile Tour</h3>
-      <p id="trivia-question-text" style="font-size: var(--fs-h3); margin-bottom: var(--space-md);">Loading...</p>
-      <div id="trivia-options-container" class="trivia-options">
-        <!-- Buttons injected by JS -->
-      </div>
-      <div id="trivia-feedback-container" class="trivia-feedback" style="display: none;">
-        <p id="trivia-feedback-text"></p>
-        <button class="btn btn--primary" id="trivia-next-btn" style="margin-top: var(--space-sm);">Next
-          Question</button>
-      </div>
-      <div id="trivia-completion-container" class="trivia-completion" style="display: none; text-align: center;">
-        <h3 style="color: var(--color-hero-accent); margin-bottom: var(--space-xs);">Magnificent!</h3>
-        <p style="margin-bottom: var(--space-md);">You've unlocked the full map of my professional journey.</p>
-        <a href="resume.html" target="_blank" class="btn btn--primary" style="text-decoration: none;">📄 View Secret
-          Resume</a>
-      </div>
-      <div class="game-progress" id="game-progress"
-        style="margin-top: var(--space-md); font-size: var(--fs-xs); color: var(--color-text-muted);">Question 1 of 5
-      </div>
-    </div>
-  </div>
-
   <script src="js/main.js"></script>
-  <script src="js/avatar-game-data.js"></script>
-  <script src="js/avatar-game.js"></script>
+  <script src="js/avatar-facts.js"></script>
 </body>
 
 </html>

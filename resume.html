@@ -15,35 +15,28 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="light-mode pt-header">
+<body>
 
-    <header class="header" id="header">
-        <div class="container header__inner">
-            <a href="index.html" class="logo">DS Vellal</a>
-            <div class="header__nav-wrapper">
-                <nav class="nav" id="nav">
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="index.html#about" class="nav__link">About</a></li>
-                        <li class="nav__item"><a href="index.html#experience" class="nav__link">Experience</a></li>
-                        <li class="nav__item"><a href="index.html#contact" class="nav__link">Contact</a></li>
-                    </ul>
-                </nav>
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark Mode" title="Toggle Dark Mode">
-                    <span class="icon-sun">☀️</span>
-                    <span class="icon-moon">🌙</span>
-                </button>
+    <nav class="nav nav--scrolled" role="navigation">
+        <div class="nav__inner">
+            <a href="index.html" class="nav__logo"><img src="images/logo-nav.png" alt="दत्त011ya" class="nav__logo-img"></a>
+            <div class="nav__links" id="nav-links">
+                <a href="index.html#about" class="nav__link">About</a>
+                <a href="index.html#experience" class="nav__link">Experience</a>
+                <a href="index.html#writing" class="nav__link">Writing</a>
             </div>
+            <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
         </div>
-    </header>
+    </nav>
 
     <main>
-        <section class="section" id="resume" style="padding-top: var(--space-xl);">
+        <section class="section" id="resume" style="padding-top: 6rem;">
             <div class="container">
                 <div class="section__header fade-in">
-                    <h2 class="section__title" style="color: var(--color-hero-accent);">Secret Unlocked: Master Profile
-                    </h2>
-                    <p class="section__subtitle" style="max-width: 600px; margin: 0 auto;">You've proven your curiosity.
-                        Welcome to the complete map of my professional journey.</p>
+                    <h2 class="section__title">Full Resume</h2>
+                    <p class="section__subtitle" style="max-width: 600px; margin: 0 auto;">The complete map of my professional journey.</p>
                 </div>
                 <div class="resume-section fade-in">
                     <div class="resume__header">
@@ -178,7 +171,7 @@
         </section>
     </main>
 
-    <footer class="footer">
+    <footer>
         <div class="container">
             <p class="footer__copy">© 2025 Dattatreya S Vellal. All rights reserved.</p>
         </div>
